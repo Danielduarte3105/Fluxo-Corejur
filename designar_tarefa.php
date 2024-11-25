@@ -16,6 +16,7 @@
         $descricao = $_POST['descricao'];
         $responsavel = $_POST['responsavel'] ?? ''; // Pegando o responsável se existir
         $tipo_tarefa = $_POST['tipo_tarefa']; // Capturando o tipo de tarefa do formulário
+        $data_limite = $_POST['data_limite']; // Capturando a data limite do formulário
 
         // Carregar o arquivo de tarefas
         $tasksFile = 'json/tasks.json';
@@ -33,6 +34,7 @@
             'status' => 'pendente',
             'data_designacao' => date('Y-m-d H:i:s'),
             'tipo_tarefa' => $tipo_tarefa, // Adicionando o tipo de tarefa
+            'data_limite' => $data_limite, // Adicionando a data limite
         ];
 
         // Adicionar a tarefa ao arquivo
@@ -46,6 +48,7 @@
     include "require/header.php";
     include "require/aside.php";
 ?>
+
 
 <?php
 // Verificar se uma data limite foi passada via GET
