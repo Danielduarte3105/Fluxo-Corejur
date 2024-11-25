@@ -107,14 +107,32 @@
                     <a href="" class="btn btn-primary mt-3">Lançar Publicação</a>
                 </div>
             </div>
-            
+
             <?php if (!empty($userTasks)): ?>
                 <div class="task-container">
                     <?php foreach ($userTasks as $task): ?>
+                        <?php
+                        // Calculando a cor do indicador com base na data limite
+                        $hoje = date('Y-m-d');
+                        $dataLimite = isset($task['data_limite']) ? $task['data_limite'] : null;
+                        $corIndicador = 'bg-secondary'; // Default: cinza (caso não tenha data limite)
+
+                        if ($dataLimite) {
+                            $diasDiferenca = (strtotime($dataLimite) - strtotime($hoje)) / (60 * 60 * 24);
+
+                            if ($diasDiferenca < 0) {
+                                $corIndicador = 'bg-danger'; // Atrasada
+                            } elseif ($diasDiferenca <= 1) {
+                                $corIndicador = 'bg-warning'; // Próxima do prazo
+                            } else {
+                                $corIndicador = 'bg-success'; // Dentro do prazo
+                            }
+                        }
+                        ?>
                         <div class="task-card border p-3 mb-3 rounded shadow-sm">
                             <!-- Indicador de cor baseado no status -->
                             <div class="d-flex align-items-center mb-2">
-                                <div class="priority-indicator bg-warning rounded-circle me-2" style="width: 12px; height: 12px;"></div>
+                                <div class="priority-indicator <?php echo $corIndicador; ?> rounded-circle me-2" style="width: 12px; height: 12px;"></div>
                                 <h5 class="mb-0">
                                     Tarefa - <?php echo htmlspecialchars($task['tipo_tarefa']); ?>
                                 </h5>
@@ -127,6 +145,9 @@
                                 <li><strong>Solicitante:</strong> <?php echo htmlspecialchars($task['solicitante']); ?></li>
                                 <li><strong>Status:</strong> <?php echo ucfirst($task['status']); ?></li>
                                 <li><strong>Data Designação:</strong> <?php echo date('d/m/Y H:i', strtotime($task['data_designacao'])); ?></li>
+                                <?php if ($dataLimite): ?>
+                                    <li><strong>Data Limite:</strong> <?php echo date('d/m/Y', strtotime($dataLimite)); ?></li>
+                                <?php endif; ?>
                             </ul>
                             <!-- Ações -->
                             <div class="mt-3">
@@ -151,6 +172,7 @@
                 <p>Você não tem tarefas pendentes.</p>
             <?php endif; ?>
         </div>
+
 
         
     </div>
