@@ -1,0 +1,31 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+#content{
+    height: calc(100vh - 145px);
+    
+}
+
+aside{
+    background: #d3d3d6;
+}
+
+main {
+    display: block;
+    width: 100%;
+    padding: 20px; /* Espaçamento ao redor do conteúdo */
+    box-sizing: border-box; /* Inclui padding no cálculo da largura/altura */
+    overflow-y: auto;
+    min-height: calc(100vh - 145px);
+}
+
+footer {
+    text-align: center; /* Centraliza o texto no footer */
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #ddd;
+    position: relative;
+}

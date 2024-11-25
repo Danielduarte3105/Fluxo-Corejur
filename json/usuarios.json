@@ -1,0 +1,42 @@
+[
+    {
+        "nome": "Admin",
+        "andar": "10\u00ba",
+        "grupo": "GII",
+        "acesso": "irrestrito",
+        "email": "admin@admin.com.br",
+        "senha": "$2y$10$SGnA0N1aG.Zos3K4\/f8My.CfWqc7GAsU7AlDl.mnbGN5FKWBR8pGu"
+    },
+    {
+        "nome": "Daniel Silva",
+        "andar": "12\u00ba",
+        "grupo": "GI",
+        "acesso": "irrestrito",
+        "email": "daniel.silva@sfa.adv.br",
+        "senha": "$2y$10$.gsE72plbYXQTyIlL.224uQX1RiQaXUMoBSngGWhyqxogeAgZ96GO"
+    },
+    {
+        "nome": "Frederico Fernandes",
+        "andar": "12\u00ba",
+        "grupo": "GII",
+        "acesso": "irrestrito",
+        "email": "Frederico.fernandes@sfa.adv.br",
+        "senha": "$2y$10$ozhCK55c7TwsK4kNjwrOiOSI7JdV7L2HAgltIVujjFqhJ0UAzUcoC"
+    },
+    {
+        "nome": "Thiago Jesus",
+        "andar": "12\u00ba",
+        "grupo": "Administrativo",
+        "acesso": "irrestrito",
+        "email": "thiago.jesus@sfa.adv.br",
+        "senha": "$2y$10$Q6tBVmhCxX8dwdkUH5Esd.\/drWl4MqZ9K8Ts2B25C4hgPvZbOyXHK"
+    },
+    {
+        "nome": "Lucas Renault",
+        "andar": "10\u00ba",
+        "grupo": "GII",
+        "acesso": "irrestrito",
+        "email": "lucas.renault@sfa.adv.br",
+        "senha": "$2y$10$I.YvPlZlRUSZx5s0A73dOeNF16BE8J6D7VvE6G3ql4cZtUgndBC4C"
+    }
+]

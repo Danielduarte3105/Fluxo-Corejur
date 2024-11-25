@@ -1,0 +1,14 @@
+.task-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.task-card {
+    position: relative;
+    background-color: #fff;
+}
+
+.priority-indicator {
+    display: inline-block;
+    background-color: yellow; /* Altere conforme prioridade */
+}
